@@ -259,7 +259,7 @@ int exfat_getattr(struct user_namespace *mnt_uerns, const struct path *path,
 		  unsigned int query_flags)
 #endif
 #else
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 11, 0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 9, 0)
 int exfat_getattr(const struct path *path, struct kstat *stat,
 		unsigned int request_mask, unsigned int query_flags)
 #else
