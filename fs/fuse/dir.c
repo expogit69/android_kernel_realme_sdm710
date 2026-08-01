@@ -1947,10 +1947,10 @@ static int fuse_setattr(struct dentry *entry, struct iattr *attr)
 	return ret;
 }
 
-static int fuse_getattr(const struct path *path, struct kstat *stat,
-			u32 request_mask, unsigned int flags)
+static int fuse_getattr(struct vfsmount *mnt, struct dentry *entry,
+			struct kstat *stat)
 {
-	struct inode *inode = d_inode(path->dentry);
+	struct inode *inode = d_inode(entry);
 	struct fuse_conn *fc = get_fuse_conn(inode);
 
 	if (fuse_is_bad(inode))
